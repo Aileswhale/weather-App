@@ -5,20 +5,22 @@ const App = () => {
 
   const [data, setData] = useState({}) 
   const [location, setLocation] = useState(''); 
+ // const [add, setAdd] = useState('')
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=cce69ccb8da066ae8be856b433c3328a`;
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(pos => {
-      const { latitude, longitude } = pos.coords;
-      console.log(latitude, longitude);
-    })
-  })
+  // useEffect(() => {
+  //   navigator.geolocation.getCurrentPosition(pos => {
+  //     const { latitude, longitude } = pos.coords;
+  //     console.log(latitude, longitude);
+  //     fetch(url).then(res=>res.json()).then(data=>setAdd(console.log(data.coord)))
+  //   })
+  // })
 
   const searchLocation = (e) => {
     if (e.key === "Enter") {
        axios.get(url).then((response) => {
          setData(response.data);
-         console.log(response.data);
+         
        });
     }
    

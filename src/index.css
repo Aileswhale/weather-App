@@ -35,3 +35,10 @@ h1{
   z-index: -1;
 }
 
+ @media (max-width: 380px) { 
+           .bottom p{
+              font-size: 0.7rem;
+
+           }
+        } 
+
